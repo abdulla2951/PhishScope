@@ -1,10 +1,10 @@
 @echo off
 setlocal enabledelayedexpansion
-title Wiki URL Analyzer - Iniciador
+title PhishScope - Iniciador
 color 0B
 
 echo ============================================
-echo   Wiki URL Analyzer - Iniciador automatico
+echo     PhishScope - Iniciador automatico
 echo ============================================
 echo.
 
